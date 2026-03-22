@@ -118,11 +118,6 @@ npm run deploy:cloudflare
 1. `vercel.json` for SPA routing fallback.
 2. `wrangler.toml` for Cloudflare Pages build output configuration.
 
-## Submission assets
-
-1. PR-ready description template: `docs/PR_DESCRIPTION.md`
-2. 2-5 minute walkthrough script: `docs/VIDEO_SCRIPT.md`
-
 ## Puzzle walkthrough summary (how the blueprint was retrieved)
 
 1. Decoded hidden `/v1/interview/start` endpoint from base64 chunks in client script.
@@ -131,13 +126,3 @@ npm run deploy:cloudflare
    Request must be JSON with Unix `timestamp`, non-default client headers, and a specific requester signal.
 4. Final successful request used:
    `X-Requested-With: Intern`, `Origin: https://zenithratech.com`, and `auth_token=1349` as cookie, then JSON body via `fetch`.
-
-## Interview-ready explanation pointers
-
-1. Why hooks were chosen for hardware APIs:
-   They isolate side effects and keep components focused on rendering/state display.
-2. Permission lifecycle strategy:
-   `idle -> pending -> granted/denied/error/unsupported`, with user-visible status at each stage.
-3. Failure handling:
-   Device absence, unsupported browser features, user-cancel flow, and permission denial are explicitly differentiated.
-
